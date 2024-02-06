@@ -1,4 +1,7 @@
+pydantic
 pandas
 numpy
 yfinance
-mysql-connector-python
+fastapi
+uvicorn
+python-dotenv
