@@ -5,3 +5,7 @@ yfinance
 fastapi
 uvicorn
 python-dotenv
+asyncio
+mysql-connector
+PyMySQL
+APScheduler
