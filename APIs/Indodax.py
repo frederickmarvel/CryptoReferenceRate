@@ -1,19 +1,11 @@
 import os
 import requests
-from dotenv import load_dotenv
 import pandas as pd 
-import numpy as np 
-from datetime import time
-import asyncio
-from datetime import datetime
+import numpy as np
 
-load_dotenv()
-idx_api_key = os.getenv("idx_api_key")
-idx_secret_key = os.getenv("idx_secret_key")
-print(idx_secret_key)
 
-url_last_price = "https://indodax.com/api/ticker/btcidr"
-async def requests_get(url):
+# url_last_price = "https://indodax.com/api/ticker/btcidr"
+def requests_get(url):
     try:
         response = requests.get(url)
 
@@ -27,10 +19,11 @@ async def requests_get(url):
         print(f"An error occurred: {e}")
         return None
 
-requests_get(url_last_price)
-requests_get(url_last_price)
-requests_get(url_last_price)
-requests_get(url_last_price)
-requests_get(url_last_price)
-requests_get(url_last_price)
-requests_get(url_last_price)
+# data_types
+# 1 -> last_price
+# 2 -> volume
+def get_data(ticker):
+    url = f"https://indodax.com/api/ticker/{ticker}"
+    data = requests_get(url)
+    return data
+
