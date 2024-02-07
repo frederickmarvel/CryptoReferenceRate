@@ -3,8 +3,6 @@ import requests
 import pandas as pd 
 import numpy as np
 
-
-# url_last_price = "https://indodax.com/api/ticker/btcidr"
 def requests_get(url):
     try:
         response = requests.get(url)
