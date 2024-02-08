@@ -2,6 +2,7 @@ import os
 import requests
 import pandas as pd 
 import numpy as np
+from datetime import datetime
 
 def requests_get(url):
     try:
@@ -24,4 +25,5 @@ def get_data(ticker):
     url = f"https://indodax.com/api/ticker/{ticker}"
     data = requests_get(url)
     return data
+
 
