@@ -12,9 +12,9 @@ cursor = db_connection.cursor()
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS btc_idr_price (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    timestamp DATETIME(6),
-    source VARCHAR(255),
-    price DECIMAL(16, 2),
-    volume DECIMAL(16, 2)
+    last_price DECIMAL(16, 2),
+    volume DECIMAL(16, 2),
+    server_time VARCHAR(255),
+    source VARCHAR(255)
 )
 """)

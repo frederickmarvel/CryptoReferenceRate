@@ -19,11 +19,13 @@ def insert_idx_data():
     data = idx.get_data("btcidr")
     lastPrice = data['ticker']['last']
     volumeTrade= data['ticker']['vol_btc']
-    server_time = data['ticker']['server_time']
-    query = ("INSERT INTO btc_idr_price (last_price, volume, server_time)"
-             "VALUES (%s, %s, %s)")
-    data = (lastPrice, volumeTrade, server_time)
+    server_time = datetime.now()
+    source = "indodax"
+    query = ("INSERT INTO btc_idr_price (last_price, volume, server_time, source)"
+             "VALUES (%s, %s, %s, %s)")
+    data = (lastPrice, volumeTrade, server_time, source)
     cursor.execute(query, data)
     db.commit()
 
+# insert_idx_data()
 
